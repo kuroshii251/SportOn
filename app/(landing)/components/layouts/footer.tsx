@@ -17,7 +17,7 @@ const Footer = () => {
             that moves as fast as you do.
           </p>
         </div>
-        <div className="w-105 grid grid-cols-2 p-10">
+        <div className="w-105 grid grid-cols-2 ">
           <div className="flex gap-7 flex-col">
             <Link href="#">Home</Link>
             <Link href="#">Categories</Link>
@@ -33,9 +33,8 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t border-t-white/15 ">
-        <div className="container mx-auto py-6.5 flex justify-between p-10">
-          <div>SportsOn © 2025 All Rights Reserverd.</div>
-
+        <div className="container mx-auto py-6.5 flex justify-between">
+          <div className="p-10">SportsOn © 2025 All Rights Reserverd.</div>
           <div className="grid grid-cols-2 w-105">
             <Link href="#">Privacy Policy</Link>
             <Link href="#">Terms Conditions</Link>
