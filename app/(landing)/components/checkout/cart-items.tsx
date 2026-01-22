@@ -1,0 +1,69 @@
+"use client";
+
+import Image from "next/image";
+import { cartList } from "../ui/cart-popup";
+import Button from "../ui/button";
+import { FiCreditCard, FiTrash2 } from "react-icons/fi";
+import priceFormatter from "@/app/utils/price-formatter";
+import CartWithHeader from "../ui/cart-with-header";
+import { useRouter } from "next/router";
+
+const CartItems = () => {
+  const {push} = useRouter();
+
+    const totalPrice = cartList.reduce(
+        (total, items) => total + items.price * items.qty, 0
+    );
+  return (
+    <CartWithHeader title="Cart Items">
+      <div className="bg-white">
+        <div className="px-5 py-4 borde-b border-gray-200">
+          <h2 className="font-bold text-lg">Cart Items</h2>
+        </div>
+        <div className="overflow-auto max-h-75">
+          {cartList.map((item, index) => (
+            <div
+              className="border-b border-gray-200 p-4 flex gap-3"
+              key={index}
+            >
+              <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
+                <Image
+                  src={"/images/products/${item.imgUrl}"}
+                  width={63}
+                  height={63}
+                  alt={item.name}
+                  className="aspect-square object-contain"
+                />
+              </div>
+              <div className="self-center">
+                <div className="text-sm font-medium">{item.name}</div>
+                <div className="flex gap-3 font-medium text-xs">
+                  <div>{item.qty}x</div>
+                  <div className="text-primary">
+                    {priceFormatter(item.price)}
+                  </div>
+                </div>
+              </div>
+              <Button size="small" className="">
+                <FiTrash2 />
+              </Button>
+            </div>
+          ))}
+        </div>
+        <div className="border-t border-gray-200 p-4">
+          <div className="flex justify-between">
+            <div className=" text-sm">Total</div>
+            <div className="text-primary text-xs">
+              {priceFormatter(totalPrice)}
+            </div>
+          </div>
+          <Button variant="dark" className="w-full" onClick={() => push("/payment")}>
+            <FiCreditCard /> Proceed to Payment
+          </Button>
+        </div>
+      </div>
+    </CartWithHeader>
+  );
+};
+
+export default CartItems;
