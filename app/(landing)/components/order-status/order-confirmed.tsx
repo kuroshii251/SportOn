@@ -5,9 +5,6 @@ import Button from "../ui/button";
 import { FiRefreshCw } from "react-icons/fi";
 
 const OrderConfirmed = () => {
-  const reloadOrderStatus = () => {
-    window.location.reload();
-  }
   return (
     <div className="bg-white w-160 p-16 flex flex-col justify-center mx-auto">
       <Image
@@ -23,7 +20,7 @@ const OrderConfirmed = () => {
           payment status, please wait and your order will be updated in less
           than 12 hours.
         </p>
-        <Button variant="dark" className="w-full" onClick={reloadOrderStatus}>
+        <Button variant="dark" className="w-full">
           <FiRefreshCw />
           Refresh Order Status
         </Button>

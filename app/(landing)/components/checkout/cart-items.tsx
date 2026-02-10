@@ -1,34 +1,39 @@
 "use client";
 
 import Image from "next/image";
-import { cartList } from "../ui/cart-popup";
 import Button from "../ui/button";
 import { FiCreditCard, FiTrash2 } from "react-icons/fi";
 import priceFormatter from "@/app/utils/price-formatter";
 import CartWithHeader from "../ui/cart-with-header";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import { useCartStore } from "@/app/hooks/use-cart-store";
+import { getImageUrl } from "@/app/lib/api";
 
-const CartItems = () => {
-  const {push} = useRouter();
 
-    const totalPrice = cartList.reduce(
-        (total, items) => total + items.price * items.qty, 0
+ type TCartItems = {
+    handlePayment: () => void;
+}
+
+const CartItems = ({handlePayment}: TCartItems) => {
+  const {items, removeItem} = useCartStore();
+const {push} = useRouter();
+
+    const totalPrice = items.reduce(
+        (total, item) => total + item.price * item.qty, 0
     );
+
   return (
     <CartWithHeader title="Cart Items">
-      <div className="bg-white">
-        <div className="px-5 py-4 borde-b border-gray-200">
-          <h2 className="font-bold text-lg">Cart Items</h2>
-        </div>
-        <div className="overflow-auto max-h-75">
-          {cartList.map((item, index) => (
+      <div className="flex flex-col justify-between h-[calc(100%-70px)]">
+   <div className="overflow-auto max-h-75">
+          {items.map((item) => (
             <div
-              className="border-b border-gray-200 p-4 flex gap-3"
-              key={index}
+              className="border-b border-gray-200 p-4 flex gap-3" 
+              key={item._id}
             >
               <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
                 <Image
-                  src={"/images/products/${item.imgUrl}"}
+                  src={getImageUrl(item.imageUrl)}
                   width={63}
                   height={63}
                   alt={item.name}
@@ -44,7 +49,7 @@ const CartItems = () => {
                   </div>
                 </div>
               </div>
-              <Button size="small" className="">
+              <Button variant="ghost" size="small" className="w-7 h-7 p-0! self-center ml-auto" onClick={() => removeItem(item._id)}>
                 <FiTrash2 />
               </Button>
             </div>
@@ -62,6 +67,7 @@ const CartItems = () => {
           </Button>
         </div>
       </div>
+     
     </CartWithHeader>
   );
 };

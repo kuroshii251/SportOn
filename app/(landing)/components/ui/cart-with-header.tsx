@@ -12,8 +12,6 @@ const CartWithHeader = ({title, children}: TCardWithHeaderProps) => {
                 <h2 className="font-bold text-lg">{title}</h2>
             </div>
             {children}
-           
-           
         </div>
     )
 

@@ -1,7 +1,19 @@
+import React from "react";
 import CartWithHeader from "../ui/cart-with-header";
+import { CustomerInfo } from "@/app/hooks/use-cart-store";
 
+type TOrderInformation = {
+    formData: CustomerInfo;
+    setFormData: React.Dispatch<React.SetStateAction<CustomerInfo>>;
+}
 
-const OrderInformation = () => {
+const OrderInformation = ({formData, setFormData} : TOrderInformation) => {
+     const handleInputChange = (e:React.ChangeEvent<HTMLInputElement |  HTMLTextAreaElement>) => {
+        setFormData({...formData, [e.target.name] : e.target.value});
+    }
+    
+  
+   
     return (
        <CartWithHeader title="Order Information">
          <div className="bg-white">
@@ -12,17 +24,17 @@ const OrderInformation = () => {
             </div>
             <div className="p-5">
                 <div className="input-group">
-                    <label htmlFor="full_name">Full Name</label>
-                    <input type="text" placeholder="Type your full name" id="full_name" />
+                    <label htmlFor="customerName">Full Name</label>
+                    <input type="text" placeholder="Type your full name" id="customerName" name="customerName" onChange={handleInputChange} value={formData.customerName ?? ""} />
                 </div>
               <div className="input-group">
-                    <label htmlFor="wa_number">Full Name</label>
-                    <input type="text" placeholder="Type your Whatsapp Number" id="wa_number" />
+                    <label htmlFor="customerContact">Whatsapp Number</label>
+                    <input type="text" placeholder="Type your Whatsapp Number" id="customerContact" name="customerContact" onChange={handleInputChange} value={formData.customerContact ?? ""} />
                 </div>
 
                 <div className="input-group">
-                    <label htmlFor="shipping_address">Shipping Address</label>
-                    <textarea placeholder="Type your shipping address" id="shipping_address" rows={7}/>
+                    <label htmlFor="customerAddress">Shipping Address</label>
+                    <textarea placeholder="Type your shipping address" id="customerAddress" name="customerAddress" onChange={handleInputChange} value={formData.customerAddress ?? ""} rows={7}/>
                 </div>
             </div>
         </div>
