@@ -4,12 +4,16 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-      protocol: "https",
-      hostname: "be-sporton.agunacourse.com",
-      "pathname": "/uploads/**",
-    },
-  ],
+        protocol: "https",
+        hostname: "be-sporton.agunacourse.com",
+        port: "",
+        pathname: "/uploads/**",
+      },
+    ],
+    minimumCacheTTL: 60,
   },
+
+  reactStrictMode: true,
 };
 
 export default nextConfig;
