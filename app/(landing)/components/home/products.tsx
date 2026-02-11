@@ -10,8 +10,6 @@ import { getImageUrl } from "@/app/lib/api";
 import { useCartStore } from "@/app/hooks/use-cart-store";
 import React from "react";
 
-
-
 type TProductsProps = {
   products: Product[]
 }

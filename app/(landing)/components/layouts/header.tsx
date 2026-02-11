@@ -12,7 +12,7 @@ const Header = () => {
       const [isCartPopupOpen, setIsCartPopupOpen] = useState(true);
   
   return (
-    <header  className="fixed w-full z-20 backdrop-blur-xl bg-white/50">
+    <header  className=" w-full z-20 backdrop-blur-xl bg-white/50">
       <div className="flex justify-between gap-10 pl-20 container mx-auto py-7">
      <Link href="/">
         <Image
