@@ -25,16 +25,16 @@ const OrderInformation = ({formData, setFormData} : TOrderInformation) => {
             <div className="p-5">
                 <div className="input-group">
                     <label htmlFor="customerName">Full Name</label>
-                    <input type="text" placeholder="Type your full name" id="customerName" name="customerName" onChange={handleInputChange} value={formData.customerName ?? ""} />
+                    <input type="text" placeholder="Type your full name" id="customerName" name="customerName" onChange={handleInputChange} value={formData.customerName} />
                 </div>
               <div className="input-group">
                     <label htmlFor="customerContact">Whatsapp Number</label>
-                    <input type="text" placeholder="Type your Whatsapp Number" id="customerContact" name="customerContact" onChange={handleInputChange} value={formData.customerContact ?? ""} />
+                    <input type="text" placeholder="Type your Whatsapp Number" id="customerContact" name="customerContact" onChange={handleInputChange} value={formData.customerContact || ""} />
                 </div>
 
                 <div className="input-group">
                     <label htmlFor="customerAddress">Shipping Address</label>
-                    <textarea placeholder="Type your shipping address" id="customerAddress" name="customerAddress" onChange={handleInputChange} value={formData.customerAddress ?? ""} rows={7}/>
+                    <textarea placeholder="Type your shipping address" id="customerAddress" name="customerAddress" onChange={handleInputChange} value={formData.customerAddress} rows={7}/>
                 </div>
             </div>
         </div>

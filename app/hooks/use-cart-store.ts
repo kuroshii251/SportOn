@@ -10,7 +10,7 @@ export interface CustomerInfo {
     customerName: string;
     customerContact: number | null;
     customerAddress: string;
-}
+}   
 
 interface CartStore {
     customerInfo: CustomerInfo | null;
