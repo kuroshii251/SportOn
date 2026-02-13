@@ -12,6 +12,8 @@ const OrderInformation = ({formData, setFormData} : TOrderInformation) => {
         setFormData({...formData, [e.target.name] : e.target.value});
     }
     
+        console.log(OrderInformation);
+
   
    
     return (

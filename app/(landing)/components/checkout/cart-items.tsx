@@ -22,6 +22,8 @@ const {push} = useRouter();
         (total, item) => total + item.price * item.qty, 0
     );
 
+    console.log(CartItems);
+
   return (
     <CartWithHeader title="Cart Items">
       <div className="flex flex-col justify-between h-[calc(100%-70px)]">

@@ -16,7 +16,7 @@ const OrderSubmitted = () => {
         height={117}
         alt="Order Submitted"
         className="mb-4"
-      >
+      />
         <h2 className="text-2xl font-semibold mb-2">Order Submitted!</h2>
         <p className="text-center mb-8">
           Your Order is recorded by our system, we are still confirming the
@@ -27,7 +27,6 @@ const OrderSubmitted = () => {
           <FiRefreshCw />
           Refresh Order Status
         </Button>
-      </Image>
     </div>
   );
 };

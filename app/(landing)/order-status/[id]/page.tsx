@@ -1,5 +1,5 @@
+import { getTransactionById } from "@/app/services/transaction.services";
 import OrderConfirmed from "../../components/order-status/order-confirmed";
-import { getTransactionById } from "../../services/transaction.service";
 import OrderRejected from "../../components/order-status/order-rejected";
 import OrderSubmitted from "../../components/order-status/order-submitted";
 

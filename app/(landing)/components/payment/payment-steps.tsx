@@ -6,8 +6,8 @@ import Button from "../ui/button";
 import { FiCheckCircle } from "react-icons/fi";
 import { useState } from "react";
 import { useCartStore } from "@/app/hooks/use-cart-store";
-import { transactionCheckout } from "../../services/transaction.service";
 import { useRouter } from "next/navigation";
+import { transactionCheckout } from "@/app/services/transaction.services";
 
 const PaymentSteps = () => {
       const {push} = useRouter();
@@ -17,10 +17,6 @@ const PaymentSteps = () => {
      const totalPrice = items.reduce(
         (total, item) => total + item.price * item.qty, 0
     );
-
-    //   const uploadAndConfirm = () => {
-    //     push("/order-status/123123123");
-    //   }
 
 
       const handleConfirmPayment =  async() => {

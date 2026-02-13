@@ -1,5 +1,5 @@
-import { fetchAPI } from "@/app/lib/api";
-import { Bank } from "@/app/types";
+import { fetchAPI } from "../lib/api";
+import { Bank } from "../types";
 
 export const getAllBank = async(): Promise<Bank[]> => {
     return  await fetchAPI<Bank[]>("/banks");
