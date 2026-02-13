@@ -1,13 +1,14 @@
 "use client";
-import priceFormatter from "@/app/utils/price-formatter";
-import CartWithHeader from "../ui/cart-with-header";
-import FileUpload from "../ui/file-upload";
-import Button from "../ui/button";
-import { FiCheckCircle } from "react-icons/fi";
-import { useState } from "react";
+
 import { useCartStore } from "@/app/hooks/use-cart-store";
-import { useRouter } from "next/navigation";
 import { transactionCheckout } from "@/app/services/transaction.services";
+import CartWithHeader from "../ui/cart-with-header";
+import priceFormatter from "@/app/utils/price-formatter";
+import Button from "../ui/button";
+import { useState } from "react";
+import FileUpload from "../ui/file-upload";
+import { FiCheckCircle } from "react-icons/fi";
+import { useRouter } from "next/navigation";
 
 const PaymentSteps = () => {
       const {push} = useRouter();

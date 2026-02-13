@@ -1,5 +1,6 @@
-import { fetchAPI } from "@/app/lib/api";
-import { Category } from "@/app/types";
+import { fetchAPI } from "../lib/api";
+import { Category } from "../types";
+
 
 export const getAllCategories = async(): Promise<Category[]> => {
     return  await fetchAPI<Category[]>("/categories");

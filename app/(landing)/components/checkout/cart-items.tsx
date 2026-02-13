@@ -39,7 +39,7 @@ const {push} = useRouter();
                   width={63}
                   height={63}
                   alt={item.name}
-                  className="aspect-square object-contain"
+                  className="aspect-square object-contain" priority
                 />
               </div>
               <div className="self-center">
