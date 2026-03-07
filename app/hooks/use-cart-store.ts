@@ -1,4 +1,4 @@
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
 import { Product } from "../types";
 import { create } from "zustand";
 
@@ -51,6 +51,7 @@ export const useCartStore = create<CartStore>() (
         }), 
         {
                 name: "cart-storage",
+                storage: createJSONStorage(() => localStorage),
         }
     )
 );

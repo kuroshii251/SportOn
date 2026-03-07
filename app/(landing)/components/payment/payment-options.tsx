@@ -5,6 +5,17 @@ import { getAllBank } from "@/app/services/bank.services";
 
 const PaymentOptions = async() => {
       const banks = await getAllBank();
+      
+      if (!banks || banks.length === 0) {
+        return (
+            <CartWithHeader title="Payment Options">
+                <div className="p-4 text-center text-gray-500">
+                    No payment options available. Please try again later.
+                </div>
+            </CartWithHeader>
+        );
+    }
+
     return (
     <CartWithHeader title="Payment Options">
         {banks.map((payment, index) => {
@@ -24,7 +35,6 @@ const PaymentOptions = async() => {
                 </div>
             )
                 
-            
 
             })} 
     </CartWithHeader>

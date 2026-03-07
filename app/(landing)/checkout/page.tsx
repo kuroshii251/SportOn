@@ -26,7 +26,15 @@ const Checkout = () => {
       return;
     }
 
-    setCustomerInfo(formData);
+    // Convert contact to number
+    const contactNumber = typeof formData.customerContact === 'string' 
+      ? parseInt(formData.customerContact, 10) 
+      : formData.customerContact;
+
+    setCustomerInfo({
+      ...formData,
+      customerContact: contactNumber
+    });
     push("/payment");
   };
 

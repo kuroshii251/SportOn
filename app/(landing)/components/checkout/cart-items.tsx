@@ -39,7 +39,8 @@ const {push} = useRouter();
                   width={63}
                   height={63}
                   alt={item.name}
-                  className="aspect-square object-contain" priority
+                  className="aspect-square object-contain" 
+                  unoptimized
                 />
               </div>
               <div className="self-center">
@@ -64,7 +65,7 @@ const {push} = useRouter();
               {priceFormatter(totalPrice)}
             </div>
           </div>
-          <Button variant="dark" className="w-full" onClick={() => push("/payment")}>
+          <Button variant="dark" className="w-full" onClick={handlePayment}>
             <FiCreditCard /> Proceed to Payment
           </Button>
         </div>

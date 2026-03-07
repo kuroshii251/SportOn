@@ -27,7 +27,7 @@ const CartPopup = () => {
 {items.length ? items.map((item, index) => (
     <div className="border-b border-gray-200 p-4 flex gap-3" key={index}>
         <div className="bg-primary-light aspect-square w-16 flex justify-center items-center">
-            <Image src={getImageUrl(item.imageUrl)} width={63} height={63} alt={item.name} className="aspect-square object-contain" />
+            <Image src={getImageUrl(item.imageUrl)} width={63} height={63} alt={item.name} className="aspect-square object-contain" unoptimized />
         </div>
         <div className="self-center">
             <div className="text-sm font-medium">
