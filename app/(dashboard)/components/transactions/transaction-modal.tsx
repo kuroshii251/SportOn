@@ -87,8 +87,8 @@ const TransactionModal = ({isOpen, onClose, transaction, onStatusChange}: TTrans
                        <div className="space-y-3">
                         {
                             transaction.purchasedItems.map((item, index) => (
-                                <>
-                                 <div className="border border-gray-200 rounded-lg p-2 flex  items-center gap-2">
+                                item.productId ? (
+                                <div key={index} className="border border-gray-200 rounded-lg p-2 flex  items-center gap-2">
                             <div className="bg-gray-100 rounded aspect-square w-8 h-8">
                                 <Image src={getImageUrl(item.productId.imageUrl)} width={30} height={30} alt="product image" />
                             </div>
@@ -97,7 +97,7 @@ const TransactionModal = ({isOpen, onClose, transaction, onStatusChange}: TTrans
                             </div>
                             <div className="font-medium ml-auto">{item.qty} units</div>
                         </div>
-                           </>
+                                ) : null
                             ))
                         }
                        </div>
@@ -116,11 +116,11 @@ const TransactionModal = ({isOpen, onClose, transaction, onStatusChange}: TTrans
                                 <div className="text-center">Updating...</div>
                             ): (
                                 <>
-                                 <Button className="text-primary! bg-primary-light rounded-md" size="small" onClick={() => handleStatusUpdate("rejected")} disabled={isUpdating}>
+                                 <Button className="text-primary! bg-primary-light rounded-md hover:text-white!" size="small" onClick={() => handleStatusUpdate("rejected")} disabled={isUpdating}>
                                 <FiX size={20}/>
 Reject
-                            </Button>
-   <Button className="text-white! bg-[#50C252]! rounded-md" size="small" onClick={() => handleStatusUpdate("rejected")} disabled={isUpdating}>
+          </Button>
+<Button className="text-white! bg-[#50C252]! rounded-md" size="small" onClick={() => handleStatusUpdate("paid")} disabled={isUpdating}>
     <FiCheck size={20}/>
 Approve
     </Button>

@@ -4,7 +4,7 @@ import { FiAlertCircle, FiRefreshCw } from "react-icons/fi";
 
 const OrderRejected = () => {
   return (
-    <div className="bg-white w-160 p-16 flex flex-col justify-center mx-auto">
+    <div className="bg-white w-160 items-center p-16 flex flex-col justify-center mx-auto">
       <div className="w-20 h-20 bg-primary-light rounded-full mx-auto p-3 flex justify-center items-center text-primary mb-5">
         <FiAlertCircle size={52} />
       </div>
