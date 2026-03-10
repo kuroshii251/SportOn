@@ -30,7 +30,7 @@ export const updateCategory = async(id:string, data:FormData): Promise<Category>
 }
 
 
-export const deleteCategory = async(id:string, data: FormData): Promise<void> => {
+export const deleteCategory = async(id:string, data?: FormData): Promise<void> => {
     return await fetchAPI<void>(`/categories/${id}`, {
         method: "DELETE",
         headers: {
