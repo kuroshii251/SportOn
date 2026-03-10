@@ -57,4 +57,6 @@ export interface Transaction {
     customerName: string;
     customerContact: number | null;
     customerAddress: string;
+     createdAt: string;
+    updatedAt: string;
 }
