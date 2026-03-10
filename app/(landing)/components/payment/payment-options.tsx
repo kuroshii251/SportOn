@@ -1,10 +1,10 @@
 import { FiCreditCard } from "react-icons/fi";
 import CartWithHeader from "../ui/cart-with-header";
-import { getAllBank } from "@/app/services/bank.services";
+import { getAllBanks } from "@/app/services/bank.services";
 
 
 const PaymentOptions = async() => {
-      const banks = await getAllBank();
+      const banks = await getAllBanks();
       
       if (!banks || banks.length === 0) {
         return (
