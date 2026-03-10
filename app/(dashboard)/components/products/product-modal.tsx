@@ -21,7 +21,7 @@ type ProductFormData = {
     price: number;
     stock: number;
     categoryId: string;
-    decsription: string;
+    description: string;
 }
 
 const ProductModal = ({
@@ -68,7 +68,7 @@ setFormData((prev) => ({...prev, [id]: value}));
         data.append("price", formData.price.toString());
         data.append("stock", formData.stock.toString());
         data.append("categoryId", formData.categoryId);
-                data.append("description", formData.decsription);
+                data.append("description", formData.description);
                 if(imageFile){
                     data.append("image", imageFile);
                 }
@@ -211,7 +211,7 @@ setFormData((prev) => ({...prev, [id]: value}));
             id="description"
             rows={3}
             placeholder="Product Details..."
-               value={formData.decsription}
+               value={formData.description}
                 onChange={handleChange} 
           ></textarea>
         </div>
