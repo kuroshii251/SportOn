@@ -30,19 +30,19 @@ const ProductsActions = ({product, stock}: TProductActionProps) => {
 
   return (
     <div className="flex gap-5">
-      <div className="border border-gray-300 inline-flex w-fit min-w-20 5">
-        <div className="aspect-square text-xl font-medium border-r border-gray-500 flex justify-center items-center">
+      <div className=" inline-flex w-fit min-w-20 5">
+        <div className="aspect-square text-xl font-medium border-r border-gray-400 border flex justify-center items-center">
           <span>{qty}</span>
         </div>
         <div className="flex flex-col">
           <button
-            className="boder-b border-gray-500 cursor-pointer h-1/2 aspect-square flex items-center justify-center"
+            className="boder-b border-gray-400 border cursor-pointer h-1/2 aspect-square flex items-center justify-center"
             onClick={() => setQty(qty < stock? qty + 1 : qty)}
           >
             <FiChevronUp />
           </button>
           <button
-            className="cursor-pointer h-1/2 aspect-square flex items-center justify-center"
+            className="cursor-pointer border border-gray-400  h-1/2 aspect-square flex items-center justify-center"
             onClick={() => setQty(qty > 1 ? qty - 1 : qty)}
           >
             <FiChevronDown />
@@ -50,10 +50,10 @@ const ProductsActions = ({product, stock}: TProductActionProps) => {
         </div>
       </div>
 
-      <Button className="px-20 w-full" onClick={handleAddToCart}>
+      <Button className="px-10 p w-full" onClick={handleAddToCart}>
         <FiShoppingBag size={24 }>Add to Cart</FiShoppingBag>
       </Button>
-      <Button variant="dark" className="px-20 w-full" onClick={() => push("/checkout")}>
+      <Button variant="dark" className="px-10 w-full" onClick={() => push("/checkout")}>
         Checkout Now
         <FiArrowRight size={24} />
       </Button>

@@ -26,7 +26,6 @@ const Checkout = () => {
       return;
     }
 
-    // Convert contact to number
     const contactNumber = typeof formData.customerContact === 'string' 
       ? parseInt(formData.customerContact, 10) 
       : formData.customerContact;
