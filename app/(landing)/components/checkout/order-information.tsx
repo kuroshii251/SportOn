@@ -18,12 +18,7 @@ const OrderInformation = ({formData, setFormData} : TOrderInformation) => {
    
     return (
        <CartWithHeader title="Order Information">
-         <div className="bg-white">
-            <div className="p-5 py-4 border-b border-gray-200">
-                <h2 className="font-bold text-lg">
-                    Order Information
-                </h2>
-            </div>
+         <div className="bg-white border-t border-gray-200">
             <div className="p-5">
                 <div className="input-group">
                     <label htmlFor="customerName">Full Name</label>

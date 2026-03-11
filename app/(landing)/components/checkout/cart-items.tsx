@@ -26,7 +26,7 @@ const {push} = useRouter();
 
   return (
     <CartWithHeader title="Cart Items">
-      <div className="flex flex-col justify-between h-[calc(100%-70px)]">
+      <div className="flex flex-col border-t border-gray-300 justify-between h-[calc(100%-70px)]">
    <div className="overflow-auto max-h-75">
           {items.map((item) => (
             <div

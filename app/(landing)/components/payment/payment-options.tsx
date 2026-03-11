@@ -20,7 +20,7 @@ const PaymentOptions = async() => {
     <CartWithHeader title="Payment Options">
         {banks.map((payment, index) => {
             return (
-<div className="flex gap-5" key={index}>
+<div className="flex gap-5 p-5 border-t border-gray-200" key={index}>
                     <div className="bg-blue-100 p-4 text-blue-500 border-b border-gray-100">
                         <FiCreditCard size={20}/>
                     </div>
