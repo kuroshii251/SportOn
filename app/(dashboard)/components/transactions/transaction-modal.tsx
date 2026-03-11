@@ -57,16 +57,19 @@ const TransactionModal = ({isOpen, onClose, transaction, onStatusChange}: TTrans
                 <div className="w-full">
                         <h4 className="font-semibold text-sm mb-2">Order Details</h4>
                         <div className="bg-gray-100 rounded-md flex flex-col gap-2.5 p-4 text-sm mb-5">
+                                                         <div className="flex justify-between font-medium">
+
                                  <div className="opacity-50">Date</div>
                             <div className="text-right">{
                 new Date(transaction.createdAt).toLocaleDateString("id-ID", {
                   day: "numeric",
-                  month: "short",
+                  month: "numeric",
                   year: "numeric",
                   hour: "2-digit",
                   minute: "2-digit",
                 })
                 }</div>
+                </div>
 
                              <div className="flex justify-between font-medium">
                                  <div className="opacity-50">Customer</div>

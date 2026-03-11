@@ -67,7 +67,7 @@ const TransactionTable = ({onViewDetails, transactions}: TTransactionTableProps)
               <td className="py-6 px-4 font-medium ">{
                 new Date(data.createdAt).toLocaleDateString("id-ID", {
                   day: "numeric",
-                  month: "short",
+                  month: "numeric",
                   year: "numeric",
                   hour: "2-digit",
                   minute: "2-digit",
